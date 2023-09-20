@@ -26,8 +26,11 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
-TCPListenerClient tcpListenerService = new TCPListenerClient();
-tcpListenerService.StartListener("127.0.0.1", 3001);
+//TCPListenerClient tcpListenerService = new TCPListenerClient();
+//tcpListenerService.StartListener("127.0.0.1", 3001);
+
+TcpListenerService tcpListenerService = new TcpListenerService();
+tcpListenerService.StartListener(3000);
 
 //var ipEndPoint = new IPEndPoint(IPAddress.Any, 3001);
 //TcpListener listener = new(ipEndPoint);
